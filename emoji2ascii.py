@@ -19,6 +19,10 @@ def convert_emoji_to_aliases(data, modifier, modifier_data, string):
     string = unicode(string, "utf-8")
     return emoji.demojize(string)
 
+def convert_aliases_to_emoji(data, modifier, modifier_data, string):
+    string = unicode(string, "utf-8")
+    return emoji.emojize(string)
+
 if __name__ == "__main__" and import_ok:
     if w.register(SCRIPT_NAME, SCRIPT_AUTHOR, SCRIPT_VERSION, SCRIPT_LICENSE,
                   SCRIPT_DESC, "", "utf-8"):
@@ -33,3 +37,6 @@ if __name__ == "__main__" and import_ok:
         w.hook_modifier("irc_in_privmsg", "convert_emoji_to_aliases", "")
         w.hook_modifier("irc_in_quit", "convert_emoji_to_aliases", "")
         w.hook_modifier("irc_in_wallops", "convert_emoji_to_aliases", "")
+
+        w.hook_modifier("irc_out1_cprivmsg", "convert_aliases_to_emoji", "")
+        w.hook_modifier("irc_out1_privmsg", "convert_aliases_to_emoji", "")
