@@ -9,18 +9,16 @@ import_ok = True
 try:
    import weechat as w
 except:
-   print "Script must be run under weechat. http://www.weechat.org"
+   print("Script must be run under weechat. http://www.weechat.org")
    import_ok = False
 
 import re
 import emoji
 
 def convert_emoji_to_aliases(data, modifier, modifier_data, string):
-    string = unicode(string, "utf-8")
     return emoji.demojize(string)
 
 def convert_aliases_to_emoji(data, modifier, modifier_data, string):
-    string = unicode(string, "utf-8")
     return emoji.emojize(string)
 
 if __name__ == "__main__" and import_ok:
