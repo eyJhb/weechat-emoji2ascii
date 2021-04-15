@@ -1,8 +1,40 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2019-2021 by eyJhb (eyjhbb@gmail.com)
+#
+# replaces incoming emojis with ascii text, and can replace outgoing
+# messages with emojis, if the same syntax is followed.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# This script deletes weechatlog-files by age or size
+# YOU ARE USING THIS SCRIPT AT YOUR OWN RISK!
+#
+# 2021-04-15: eyJhb
+#       0.2 : added this text + error if unable to import emoji package
+#
+# 2019-09-16: eyJhb
+#       0.1 : initial release
+#
+# Development is currently hosted at
+# https://github.com/eyJhb/weechat-emoji2ascii
+
 SCRIPT_NAME    = "emoji2ascii"
 SCRIPT_AUTHOR  = "eyJhb <eyjhbb@gmail.com>"
-SCRIPT_VERSION = "0.1"
+SCRIPT_VERSION = "0.2"
 SCRIPT_LICENSE = "GPLv3"
-SCRIPT_DESC    = "Replaces emoji characters with ascii text"
+SCRIPT_DESC    = "Replaces emoji characters with ascii text and vice versa"
 
 import_ok = True
 
@@ -12,8 +44,13 @@ except:
    print("Script must be run under weechat. http://www.weechat.org")
    import_ok = False
 
+try:
+    import emoji
+except ImportError:
+    print("Failed to import emoji, please install it")
+    import_ok = False
+
 import re
-import emoji
 
 def convert_emoji_to_aliases(data, modifier, modifier_data, string):
     return emoji.demojize(string)
