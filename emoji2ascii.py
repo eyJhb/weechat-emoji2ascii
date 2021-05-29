@@ -62,16 +62,16 @@ if __name__ == "__main__" and import_ok:
     if w.register(SCRIPT_NAME, SCRIPT_AUTHOR, SCRIPT_VERSION, SCRIPT_LICENSE,
                   SCRIPT_DESC, "", "utf-8"):
 
-        w.hook_modifier("irc_in_away", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_cnotice", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_cprivmsg", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_kick", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_knock", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_notice", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_part", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_privmsg", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_quit", "convert_emoji_to_aliases", "")
-        w.hook_modifier("irc_in_wallops", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_away", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_cnotice", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_cprivmsg", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_kick", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_knock", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_notice", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_part", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_privmsg", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_quit", "convert_emoji_to_aliases", "")
+        w.hook_modifier("irc_in2_wallops", "convert_emoji_to_aliases", "")
 
         w.hook_modifier("irc_out1_cprivmsg", "convert_aliases_to_emoji", "")
         w.hook_modifier("irc_out1_privmsg", "convert_aliases_to_emoji", "")
