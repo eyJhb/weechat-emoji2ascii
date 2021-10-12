@@ -18,9 +18,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# This script deletes weechatlog-files by age or size
-# YOU ARE USING THIS SCRIPT AT YOUR OWN RISK!
-#
 # 2021-04-15: eyJhb
 #       0.2 : added this text + error if unable to import emoji package
 #
